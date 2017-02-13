@@ -42,7 +42,7 @@ of 6432, pass a variable named `pgbouncer_listen_port`.  See the template file
 for other configs that can be overridden this way. Note that not all settings
 are available, only some common ones that I use.
 
-**Note:** Some variables expect an array - it should be obvious which ones. 
+**Note:** Some variables expect an array - it should be obvious which ones.
 
 See the [`defaults/main.yml`](defaults/main.yml) for more descriptions of other
 variables. You should also check
