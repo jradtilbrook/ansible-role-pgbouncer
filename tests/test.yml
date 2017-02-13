@@ -1,0 +1,21 @@
+---
+- hosts: all
+  become: yes
+
+  vars:
+    pgbouncer_listen_port: 5432
+    pgbouncer_users:
+      - username: username
+        password: passwd123
+    pgbouncer_databases:
+      - dev:
+          host: database
+          port: 5432
+          dbname: postgres
+      - live:
+          host: 10.0.0.4
+          port: 5432
+          dbname: database
+
+  roles:
+    - role_under_test
