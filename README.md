@@ -1,4 +1,4 @@
-# Ansible Role: PgBouncer
+# Ansible Role: PgBouncer [![Build Status](https://travis-ci.org/jradtilbrook/ansible-role-pgbouncer.svg?branch=master)](https://travis-ci.org/jradtilbrook/ansible-role-pgbouncer)
 
 This role installs and configures the PgBouncer connection pooler for
 PostgreSQL.
@@ -48,6 +48,7 @@ See the [`defaults/main.yml`](defaults/main.yml) for more descriptions of other
 variables. You should also check
 [`templates/pgbouncer.ini.j2`](templates/pgbouncer.ini.j2) for possible extra
 variables you can set.
+
 
 ## Resources
 
