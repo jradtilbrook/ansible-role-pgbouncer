@@ -1,0 +1,47 @@
+---
+# whether to install postgresql-client
+pgbouncer_install_psql: false
+
+# default to reload pgbouncer when configuration changes occur. if your
+# settings need a full service restart, change this to `restart`.
+# possible values: `restart` or `reload` (see handlers)
+pgbouncer_service_state: reload
+
+# array of username and password for the auth_file
+# any valid pgbouncer value is allowed (eg md5 hash)
+# eg:
+#   - username: user
+#     password: passwd
+pgbouncer_users: []
+
+# external connection properties
+# required structure:
+# - dev_db: # the alias database name
+#     host: 10.0.0.5 # the host running postgres, can use a dns name
+#     port: 5432 # the port for postgres
+#     dbname: postgres # the database in postgres
+#
+# additional available keys for each alias:
+# - host
+# - port
+# - dbname
+# - user
+# - password
+# - pool_mode
+# - pool_size
+# - max_db_connections
+# there are other possible values but these are most common - see the pgbouncer
+# docs for more info
+pgbouncer_databases: []
+
+# most other settings have their defaults but allowing overriding if desired.
+# to do this just prefix the configuration property with `pgbouncer_`.
+# be careful to use the right variable type and check templates/pgbouncer.ini.j2
+# to make sure your setting is available for overriding.
+
+# some example dynamic overrides:
+# pool sizes
+#pgbouncer_max_client_conn: 100
+#pgbouncer_default_pool_size: 20
+# listen port
+#pgbouncer_listen_port: 5432

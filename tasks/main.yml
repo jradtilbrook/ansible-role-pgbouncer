@@ -1,0 +1,24 @@
+---
+- name: install pgbouncer
+  apt:
+    pkg: pgbouncer
+    state: present
+    update_cache: yes
+    cache_valid_time: 3600
+
+- name: install postgresql-client
+  apt:
+    pkg: postgresql-client
+    state: present
+  when: pgbouncer_install_psql
+
+- name: template config files
+  template:
+    src: "{{ item }}"
+    dest: /etc/pgbouncer/{{ item | basename | splitext | first }}
+    backup: yes
+    owner: postgres
+    group: postgres
+    mode: 0640
+  with_fileglob: templates/*
+  notify: "{{ pgbouncer_service_state }} pgbouncer"

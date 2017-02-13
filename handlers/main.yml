@@ -1,0 +1,14 @@
+---
+# most changes to configuration only need online reload without dropping
+# connections but its too hard to dynamically decide if
+- name: reload pgbouncer
+  service:
+    name: pgbouncer
+    state: reloaded
+
+# this is left in here so a playbook can still use if changing stuff that
+# requires a complete restart
+- name: restart pgbouncer
+  service:
+    name: pgbouncer
+    state: restarted
