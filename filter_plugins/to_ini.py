@@ -10,7 +10,7 @@ def to_ini(databases = []):
             for key, value in config.iteritems():
                 s = s + str(key) + '=' + str(value) + ' '
         s = s.rstrip() + '\n'
-    return s
+    return s.rstrip()
 
 class FilterModule():
     def filters(self):
