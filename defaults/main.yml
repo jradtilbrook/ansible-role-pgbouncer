@@ -1,4 +1,7 @@
 ---
+# change this to `latest` to always get the most up to date version
+pgbouncer_install_state: present
+
 # whether to install postgresql-client
 pgbouncer_install_psql: false
 

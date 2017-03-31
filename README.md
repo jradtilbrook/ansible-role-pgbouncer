@@ -49,6 +49,10 @@ variables. You should also check
 [`templates/pgbouncer.ini.j2`](templates/pgbouncer.ini.j2) for possible extra
 variables you can set.
 
+`pgbouncer_install_state`: This is useful for updating PgBouncer to newer
+versions after it has already been installed. Use `latest` to achieve this
+functionality.
+
 
 ## Resources
 
