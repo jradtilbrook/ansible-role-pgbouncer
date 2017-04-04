@@ -14,4 +14,4 @@ def to_ini(databases = []):
 
 class FilterModule():
     def filters(self):
-        return {'to_ini': to_ini}
+        return {'pgbouncer_to_ini': to_ini}

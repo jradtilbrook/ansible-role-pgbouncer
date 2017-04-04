@@ -2,7 +2,7 @@
 
 ;; Databases
 [databases]
-{{ pgbouncer_databases | to_ini }}
+{{ pgbouncer_databases | pgbouncer_to_ini }}
 
 ;; Configuration section
 [pgbouncer]
