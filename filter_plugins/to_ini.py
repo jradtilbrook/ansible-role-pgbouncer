@@ -5,9 +5,9 @@ def to_ini(databases = []):
     """
     s = ''
     for db in databases:
-        for alias, config in db.iteritems():
+        for alias, config in db.items():
             s = s + str(alias) + ' = '
-            for key, value in config.iteritems():
+            for key, value in config.items():
                 s = s + str(key) + '=' + str(value) + ' '
         s = s.rstrip() + '\n'
     return s.rstrip()
