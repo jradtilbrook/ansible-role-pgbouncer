@@ -114,7 +114,7 @@ auth_file = /etc/pgbouncer/userlist.txt
 admin_users = {{ pgbouncer_admin_users | default([]) | join(', ') }}
 
 ;; comma-separated list of users who are just allowed to use SHOW command
-stats_users = {{ pgbouncer_stats_users | default(['stats','root']) | join(', ') }}
+stats_users = {{ pgbouncer_stats_users | default([]) | join(', ') }}
 
 ;;;
 ;;; Pooler personality questions
